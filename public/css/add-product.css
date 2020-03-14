@@ -1,0 +1,45 @@
+.add-product_container {
+  text-align: center;
+  max-width: 30rem;
+  margin: auto;
+}
+
+.add-product_form-item {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin: auto;
+  margin-bottom: 2.2rem;
+  margin-top: 2rem;
+  width: 85%;
+}
+
+.add-product_form-item input {
+  padding: 5px;
+  border: none;
+  border-bottom: solid 1px lightgray;
+  width: 100%;
+  background: transparent;
+  z-index: 1;
+  outline: none;
+}
+
+.add-product_form-item label {
+  position: absolute;
+  left: 5px;
+  top: 3px;
+  color: gray;
+  transition: 0.25s;
+}
+
+input:focus + label {
+  top: -1rem;
+  left: 0;
+  font-size: 0.65rem;
+}
+
+input:valid + label {
+  top: -1rem;
+  left: 0;
+  font-size: 0.65rem;
+}

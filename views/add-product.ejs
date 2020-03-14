@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/global-style.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/add-product.css" />
+    <title><%= pageTitle %></title>
+  </head>
+  <body>
+    <%- include('partials/header.ejs') %>
+    <div style="border: solid 1px lightgray; margin: 0.5rem 2rem">
+      <h3 style="text-align: center;">
+        Add new Product
+      </h3>
+      <div class="add-product_container">
+        <form method="POST" action="/admin/add-product">
+          <div class="add-product_form-item">
+            <input
+              class="add-product_form-input"
+              name="title"
+              id="title"
+              required
+            />
+            <label class="add-product_form-label" for="title">Name</label>
+          </div>
+          <div class="add-product_form-item">
+            <input name="img" id="img" required />
+            <label for="img">Image URL</label>
+          </div>
+          <div class="add-product_form-item">
+            <input name="price" id="price" required />
+            <label for="price">Price</label>
+          </div>
+          <div class="add-product_form-item">
+            <input name="desc" id="desc" required />
+            <label for="desc">Description</label>
+          </div>
+          <button style="margin-bottom: 2rem;" class="btn primary">ADD</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
