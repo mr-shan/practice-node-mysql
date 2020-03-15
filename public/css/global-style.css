@@ -7,7 +7,7 @@ body {
 }
 
 .btn {
-  font-size: 1rem;
+  font-size: 0.9rem;
   outline: none;
   padding: 0.4rem 0.75rem;
   border: none;
@@ -18,9 +18,9 @@ body {
 
 .primary {
   color: white;
-  background: royalblue;
+  background: #3f51b5;
 }
 
 .primary:hover {
-  background: rgb(103, 133, 223);
+  background: #6470b6;
 }
