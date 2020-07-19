@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/images/icon.png" />
+    <link rel="stylesheet" href="/css/global-style.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/product-details.css" />
+    <title><%= pageTitle %></title>
+  </head>
+  <body>
+    <%- include('partials/header.ejs') %>
+    <h3 style="text-align: center;">
+      
+    </h3>
+    <div class="product-details-container">
+      <img src="<%= product.img %>" alt="image not available" />
+      <h4><%= product.title %></h4>
+      <div>Price: <%= product.price %> ₹</div>
+      <p><%= product.desc %></p>
+      <div class="shop-item-buttons-container">
+        <a class="btn primary" href="/product/<%= product.id %>"
+          >Edit (Admin Only)</a
+        >
+        <a class="btn primary" href="/product/<%= product.id %>"
+          >Add to Cart</a
+        >
+      </div>
+    </div>
+  </body>
+</html>

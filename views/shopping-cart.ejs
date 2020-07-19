@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/images/icon.png" />
+    <link rel="stylesheet" href="/css/global-style.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/shop.css" />
+    <link rel="stylesheet" href="/css/shopping-cart.css" />
+    <title><%= pageTitle %></title>
+  </head>
+  <body>
+    <%- include('partials/header.ejs') %>
+    <h3 style="text-align: center;">
+      Shopping Cart.
+    </h3>
+    <div class="cart_container">
+      <% for(product of cartItems) {%>
+      <div class="cart_item-container">
+        <img src="<%= product.img %>" alt="image not available" />
+        <div>
+          <h4><%= product.title %></h4>
+          <div>
+            Total Price: <%= product.total_price %> ₹
+            <span class="shopping-cart-price-details">
+              (<%= product.total_price / product.count %> * <%= product.count
+              %>)
+            </span>
+          </div>
+          <p>Quantity: <%= product.count %></p>
+        </div>
+        <div class="cart-item-buttons-container">
+          <a class="btn primary cart-item-button" href="/product/<%= product.id %>">Details</a>
+          <form method="POST" action="/shopping-cart/remove/<%= product.id %>">
+            <button class="btn primary cart-item-button" style="width: 100%;" type="submit">Remove</button>
+          </form>
+        </div>
+      </div>
+      <% } %>
+    </div>
+  </body>
+</html>

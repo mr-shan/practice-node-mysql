@@ -1,12 +1,26 @@
-const products = [
-  {
-    id: 1,
-    title: "Northen Coffee Guide",
-    img:
-      "https://images.pexels.com/photos/1516983/pexels-photo-1516983.jpeg?auto=compress&cs=tinysrgb&h=426&w=640",
-    desc: "A very good guide to make coffees with northen styles.",
-    price: 560
-  }
-];
+const db = require("./../service/db");
 
-module.exports = products;
+module.exports = class Product {
+  constructor(id, title, img, desc, price, category) {
+    this.id = id;
+    this.title = title;
+    this.img = img;
+    this.desc = desc;
+    this.price = price;
+    this.category = category;
+  }
+
+  save = () =>
+    db.execute(
+      "INSERT INTO products (`title`, `desc`, `img`, `price`) VALUES (?, ?, ?, ?)",
+      [this.title, this.desc, this.img, this.price]
+    );
+
+  static deleteById = (id) =>
+    db.execute("SELECT * FROM products where id = ?", [id]);
+
+  static fetchAll = () => db.execute("SELECT * FROM products");
+
+  static findById = (id) =>
+    db.execute("SELECT * FROM products WHERE id = ?", [id]);
+};

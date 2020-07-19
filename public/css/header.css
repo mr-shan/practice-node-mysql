@@ -5,6 +5,8 @@
 
 .main-header__nav {
   max-width: 1400px;
+  text-align: center;
+  margin: auto;
 }
 
 .main-header__item-list {

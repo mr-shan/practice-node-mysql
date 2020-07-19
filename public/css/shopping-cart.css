@@ -1,0 +1,36 @@
+.shopping-cart-price-details {
+  font-size: 0.7rem;
+  color: #999;
+}
+
+.cart_container {
+  max-width: 1400px;
+  margin: auto;
+  padding-bottom: 200px;
+}
+
+.cart_item-container {
+  display: flex;
+  align-items: center;
+  border: solid 1px gray;
+  padding: 1rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+.cart_item-container img {
+  max-height: 250px;
+  max-width: 250px;
+}
+
+.cart-item-buttons-container {
+  justify-self: flex-end;
+  align-self: center;
+  margin-left: auto;
+}
+
+.cart-item-button {
+  width: 110px;
+  margin: 0.25rem 0;
+  display: inline-block;
+}

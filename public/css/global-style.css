@@ -7,13 +7,21 @@ body {
 }
 
 .btn {
-  font-size: 0.9rem;
-  outline: none;
-  padding: 0.4rem 0.75rem;
+  text-decoration: none;
+  color: white;
+  background: #3f51b5;
   border: none;
+  padding: 8px 22px;
+  margin: 5px 10px;
+  min-width: 100px;
+  text-align: center;
   transition: all 0.2s;
+
   cursor: pointer;
-  min-width: 7.5rem;
+  font-size: 1rem;
+  text-align: center;
+  border: none;
+  outline: none;
 }
 
 .primary {
@@ -24,3 +32,4 @@ body {
 .primary:hover {
   background: #6470b6;
 }
+

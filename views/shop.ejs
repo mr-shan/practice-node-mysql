@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel='icon' href='/images/icon.png'>
+    <link rel="icon" href="/images/icon.png" />
     <link rel="stylesheet" href="/css/global-style.css" />
     <link rel="stylesheet" href="/css/header.css" />
     <link rel="stylesheet" href="/css/shop.css" />
@@ -16,12 +16,22 @@
     </h3>
     <div class="shop_container">
       <% for(product of products) {%>
-        <div class="shop_item-container">
+      <div class="shop_item-container">
+        <div class="shop-item-img-container">
           <img src="<%= product.img %>" alt="image not available" />
-          <h4><%= product.title %></h4>
-          <div>Price: <%= product.price %> ₹</div>
-          <p><%= product.desc %></p>
         </div>
+        <h4><%= product.title %></h4>
+        <div>Price: <%= product.price %> ₹</div>
+        <p class="shop-item-desc"><%= product.desc %></p>
+        <div class="shop-item-buttons-container">
+          <a class="btn primary" href="/product/<%= product.id %>">
+            Details
+          </a>
+          <form method="POST" action="/shopping-cart/add/<%= product.id %>">
+            <button class="btn primary" type="submit">Add to Cart</button>
+          </form>
+        </div>
+      </div>
       <% } %>
     </div>
   </body>
